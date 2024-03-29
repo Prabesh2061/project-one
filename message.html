@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discord</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/222cea3eed.js"></script>
+  </head>
+  <body>
+    <div class="servers">
+      <div class="logo">
+        <img
+          src="https://static.vecteezy.com/system/resources/previews/018/930/718/original/discord-logo-discord-icon-transparent-free-png.png"
+          alt="Discord"
+        />
+      </div>
+      <div class="server-logo">
+        <span class="message__count">8</span>
+        <img
+          src="https://avatarfiles.alphacoders.com/365/365293.jpg"
+          alt="server"
+        />
+      </div>
+      <div class="server-logo">
+        <span class="message__count">50</span>
+        <img
+          src="https://avatarfiles.alphacoders.com/368/368060.png"
+          alt="server"
+        />
+      </div>
+      <div class="server-logo">
+        <span class="message__count">120</span>
+        <img
+          src="https://avatarfiles.alphacoders.com/374/374452.png"
+          alt="server"
+        />
+      </div>
+      <div class="server-logo">
+        <span class="message__count">20</span>
+        <img
+          src="https://avatarfiles.alphacoders.com/371/371091.png"
+          alt="server"
+        />
+      </div>
+      <div class="server-logo">
+        <span class="message__count">25</span>
+        <img
+          src="https://avatarfiles.alphacoders.com/367/367314.png"
+          alt="server"
+        />
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="sidebar__top">
+        <input type="text" placeholder="Find or start a conversation" />
+      </div>
+      <div class="sidebar__icon">
+        <i class="fas fa-user-friends fa-lg"></i>
+        <span>Friends</span>
+      </div>
+      <div class="sidebar__icon">
+        <i class="fas fa-compact-disc fa-lg"></i>
+        <span>Nitro</span>
+      </div>
+      <div class="sidebar__users">
+        <div class="sidebar__usersHeader">
+          <div class="sidebar__header">
+            <h4>Direct messages</h4>
+          </div>
+          <i class="fas fa-plus sidebar__addUser"></i>
+        </div>
+        <div>
+          <div class="sidebar__user">
+            <div>
+              <span class="status"></span>
+              <img
+                src="https://avatarfiles.alphacoders.com/319/319981.jpg"
+                alt="avatar"
+              />
+            </div>
+            <h4>Hacker</h4>
+          </div>
+          <div class="sidebar__user">
+            <div>
+              <span class="status"></span>
+              <img
+                src="https://avatarfiles.alphacoders.com/375/375449.jpeg"
+                alt="avatar"
+              />
+            </div>
+            <h4>Toji</h4>
+          </div>
+          <div class="sidebar__user">
+            <div>
+              <span class="status"></span>
+              <img
+                src="https://avatarfiles.alphacoders.com/336/336875.png"
+                alt="avatar"
+              />
+            </div>
+            <h4>Miku</h4>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar__profile">
+        <div>
+          <span class="status"></span>
+          <img
+            src="https://avatarfiles.alphacoders.com/375/375329.png"
+            alt="avatar"
+          />
+        </div>
+        <div class="sidebar__profileInfo">
+          <h3>Prabesh</h3>
+          <p>#8420</p>
+        </div>
+        <div class="sidebar__profileIcons">
+          <i class="fas fa-microphone"></i>
+          <i class="fas fa-headset"></i>
+          <i class="fas fa-cog"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat">
+      <div>
+        <div class="chatHeader">
+          <div class="chatHeader__left">
+            <span class="chatHeader__Dm">@</span>
+            <h3>Miku</h3>
+          </div>
+          <div class="chatHeader__right">
+            <i class="fas fa-phone-volume fa-lg"></i>
+            <i class="fas fa-video fa-lg"></i>
+            <i class="fas fa-thumbtack fa-lg"></i>
+            <i class="fas fa-user-plus fa-lg"></i>
+
+            <div class="search">
+              <input type="text" placeholder="search" />
+              <i class="fas fa-search fa-lg"></i>
+            </div>
+            <i class="fas fa-inbox fa-lg"></i>
+            <i class="fas fa-question-circle fa-lg"></i>
+          </div>
+        </div>
+      </div>
+      <div class="chat__messages">
+        <div class="message">
+          <img
+            src="https://avatarfiles.alphacoders.com/336/336875.png"
+            alt="avatar"
+          />
+          <div class="message__info">
+            <h4>
+              Miku <span class="message__timestamp">04/28/2022</span>
+            </h4>
+            <p>Hello</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat__input">
+        <i class="fas fa-plus-circle fa-lg"></i>
+        <form>
+          <input class="sendMessage" type="text" placeholder="send message" />
+          <button class="chat__inputButton" type="submit">Send</button>
+        </form>
+        <div class="chat__inputIcons">
+          <i class="fas fa-gift fa-lg"></i>
+          <i class="fas fa-file-image fa-lg"></i>
+          <i class="fas fa-laugh fa-lg"></i>
+        </div>
+      </div>
+    </div>
+    <script>
+      const form = document.querySelector("form");
+      const chatMessages = document.querySelector(".chat__messages");
+      const input = document.querySelector(".sendMessage");
+
+      form.addEventListener("submit", sendMessage);
+
+      function sendMessage(e) {
+        e.preventDefault();
+
+        if (input.value !== "") {
+          var messageDiv = document.createElement("div");
+          messageDiv.className = "message";
+
+          var avatar = document.createElement("img");
+          avatar.src = "https://avatarfiles.alphacoders.com/375/375329.png";
+
+          var messageInfo = document.createElement("div");
+          messageInfo.className = "message__info";
+
+          var userInfo = document.createElement("h4");
+          userInfo.innerHTML = "Prabesh";
+
+          var messageTimestamp = document.createElement("span");
+          messageTimestamp.className = "message__timestamp";
+
+          const date = new Date();
+          const year = date.getFullYear();
+          const month = String(date.getMonth()).padStart(2, "0");
+          const day = String(date.getDate()).padStart(2, "0");
+
+          messageTimestamp.innerHTML = month + "/" + day + "/" + year;
+
+          const message = document.createElement("p");
+          message.innerHTML = input.value;
+          input.value = "";
+
+          userInfo.appendChild(messageTimestamp);
+          messageInfo.appendChild(userInfo);
+          messageInfo.appendChild(message);
+
+          messageDiv.appendChild(avatar);
+          messageDiv.appendChild(messageInfo);
+
+          chatMessages.appendChild(messageDiv);
+          chatMessages.scrollBy(0, 10000);
+        }
+      }
+    </script>
+  </body>
+</html>
